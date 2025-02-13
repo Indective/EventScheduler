@@ -132,9 +132,6 @@ void schd::notifyEvent(const std::string& base_path, const std::string& event_na
 
         std::string command = "powershell -Command \"& { New-BurntToastNotification -Text \\\"Event Reminder\\\", \\\"" + event_details[0] + "\\\" }\"";
         
-        // For debugging, you might want to print the command to verify its correctness:
-        // std::cout << "Command: " << command << std::endl;
-        
         system(command.c_str());
     }
     else

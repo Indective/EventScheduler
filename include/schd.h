@@ -8,10 +8,8 @@
 class schd
 {
 private:
-    // Fixed directory name for all operations
     const std::string fixed_dir = "Events";
 public:
-    // The functions now only require the base path (e.g. the parent directory) and event name when needed.
     void ScheduleEvent(const std::string& base_path);
     bool checkdir(const std::string& base_path);
     void createdir(const std::string& base_path);

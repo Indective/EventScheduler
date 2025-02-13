@@ -21,6 +21,8 @@ int main(int argc, char* argv[])
         {
             int command_code = -1;
             std::string command;
+            std::cout << "Running in interactive mode..." << std::endl;
+            s.createdir(base_path);
             while (true)
             {
                 std::cout << "\nWelcome Back!" << std::endl;
