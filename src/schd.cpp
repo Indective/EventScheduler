@@ -129,13 +129,8 @@ void schd::notifyEvent(const std::string& base_path, const std::string& event_na
     if (checkEvent(base_path, event_name))
     {
         std::vector<std::string> event_details = getEventDetails(base_path, event_name);
-        // Format the notification message; ensure it doesn't contain problematic characters.
-        std::string message = "Event: " + event_details[0] + "  Time: " + event_details[2];
 
-        // Build the command using escaped double quotes.
-        // The command will look like:
-        // powershell -Command "& { New-BurntToastNotification -Text \"Event Reminder\", \"Event: ... Time: ...\" }"
-        std::string command = "powershell -Command \"& { New-BurntToastNotification -Text \\\"Event Reminder\\\", \\\"" + message + "\\\" }\"";
+        std::string command = "powershell -Command \"& { New-BurntToastNotification -Text \\\"Event Reminder\\\", \\\"" + event_details[0] + "\\\" }\"";
         
         // For debugging, you might want to print the command to verify its correctness:
         // std::cout << "Command: " << command << std::endl;
