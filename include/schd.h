@@ -1,4 +1,3 @@
-// schd.h
 #ifndef POWERSHELL_H
 #define POWERSHELL_H
 
