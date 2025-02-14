@@ -125,13 +125,14 @@ bool schd::checkEvent(const std::string& base_path, const std::string& event_nam
 
 void schd::notifyEvent(const std::string& base_path, const std::string& event_name)
 {
-    
+    fs::current_path(base_path);
+    std::string image_path = base_path + "/" + "NotifImage.jpg";
     if (checkEvent(base_path, event_name))
     {
+        fs::current_path(base_path);
         std::vector<std::string> event_details = getEventDetails(base_path, event_name);
 
-        std::string command = "powershell -Command \"& { New-BurntToastNotification -Text \\\"Event Reminder\\\", \\\"" + event_details[0] + "\\\" }\"";
-        
+        std::string command = "powershell -Command \"& { New-BurntToastNotification -Text \\\"Event Reminder\\\", \\\"" + event_details[0] + "\\\" -AppLogo \\\"" + image_path + "\\\" }\"";
         system(command.c_str());
     }
     else
