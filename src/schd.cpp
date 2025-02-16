@@ -123,7 +123,7 @@ bool schd::checkEvent(const std::string& base_path, const std::string& event_nam
     }
 }
 
-void schd::notifyEvent(const std::string& base_path, const std::string& event_name)
+void schd::notifyEvent(const std::string& base_path, const std::string& event_name) 
 {
     fs::current_path(base_path);
     std::string image_path = base_path + "/" + "NotifImage.jpg";
