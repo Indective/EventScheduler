@@ -76,6 +76,7 @@ int main(int argc, char* argv[])
         }
     }
 
+    s.createdir(base_path);
     std::cout << "Running in background mode using fixed directory \"events\"... (Press Ctrl+C to exit)" << std::endl;
     while (true)
     {
@@ -85,9 +86,9 @@ int main(int argc, char* argv[])
             if (s.checkEvent(base_path, event))
             {
                 s.notifyEvent(base_path, event);
+                std::this_thread::sleep_for(std::chrono::seconds(60));
             }
         }
-        std::this_thread::sleep_for(std::chrono::minutes(1));
     }
     
     return 0;
