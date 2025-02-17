@@ -185,3 +185,16 @@ void schd::showCurrentEvents(const std::string& base_path)
         std::cout << e.what() << "\n";
     }  
 }
+
+void schd::deleteEvent(const std::string &base_path, const std::string &event_name)
+{
+    try{
+        std::string new_path = base_path + "/" + fixed_dir;
+        fs::current_path(new_path);
+        fs::remove(event_name);
+        std::cout << "Event deleted!" << std::endl;
+    }catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+}

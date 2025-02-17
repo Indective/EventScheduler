@@ -1,12 +1,17 @@
 # EventScheduler
 
+APPLICATION IS NOT CROSS-PLATFORM, IT WILL ONLT WORK ON WINDOWS
+
 ## Overview
 EventScheduler is a project designed to help users manage and schedule their events efficiently. This application allows users to create events and store them into files and get notifed on thier pc when the time for there event comes, ensuring they stay organized and never miss an important date.
 Once the time of a notification comes, you will be notified on your machine through Burnttoast Notifications.
 
 ## Features
 - **Create Events**: Users can create new events with specific details such as title, date, time, and description.
+- **Delete Events**: Users can delete events.
 - **View Events**: Users can view a list of all their scheduled events.
+- **Get notified** : Users will get notified when any event is happening.
+
 
 ## Project Structure
 The project is organized into several key folders and files:

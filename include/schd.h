@@ -19,6 +19,7 @@ public:
     std::string getCurrentDate();
     std::vector<std::string> getEvents(const std::string& base_path);
     void showCurrentEvents(const std::string& base_path);
+    void deleteEvent(const std::string& base_path, const std::string& event_name);
 };
 
 #endif

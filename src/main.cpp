@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
             {
                 std::cout << "\nWelcome Back!" << std::endl;
                 std::cout << "What would you like to do?" << std::endl;
-                std::cout << "Commands: schd, check, show, dtls, exit" << std::endl;
+                std::cout << "Commands: schd, check, show, dtls, exit, dlt" << std::endl;
                 std::cout << "Enter command: ";
                 std::getline(std::cin, command);
 
@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
                 else if (command == "show")       command_code = 3;
                 else if (command == "dtls")       command_code = 4;
                 else if (command == "exit")       command_code = 5;
+                else if (command == "dlt")        command_code = 6;
                 else                            command_code = -1;
 
                 switch (command_code)
@@ -69,6 +70,14 @@ int main(int argc, char* argv[])
                     }
                     case 5:
                         return 0;
+                    case 6:
+                    {
+                        std::string eventname;
+                        std::cout << "Enter the name of the event: ";
+                        std::getline(std::cin, eventname);
+                        s.deleteEvent(base_path, eventname);
+                        break;
+                    }
                     default:
                         std::cout << "Invalid command!" << std::endl;
                 }
